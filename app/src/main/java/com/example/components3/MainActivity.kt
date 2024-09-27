@@ -34,8 +34,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Components3Theme {
-                RecyclerView2()
-
+              //  RecyclerView2()
+                SimpleRecyclerView()
             }
         }
     }
@@ -102,8 +102,8 @@ fun ItemHeroe(heroe: Heroe, onItemSelected: (Heroe) -> Unit) {
 
 @Composable
 fun SimpleRecyclerView() {
-    val lista = listOf("mesa", "silla", "pizarra", "teclado", "raton")
-    LazyColumn {
+    val lista = MutableList(50) { index -> "Element $index" }
+    LazyColumn(modifier = Modifier.padding(15.dp)) {
         item { Text(text = "Primer item") }
         items(lista) {
             Text(text = "Soy $it")
