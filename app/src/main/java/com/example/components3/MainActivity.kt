@@ -21,14 +21,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Components3Theme {
-                SimpleRecyclerView()
+                SimpleList()
             }
         }
     }
 }
 
 @Composable
-fun SimpleRecyclerView() {
+fun SimpleList() {
     val lista = MutableList(50) { index -> "Element $index" }
     LazyColumn(modifier = Modifier.padding(15.dp)) {
         item { Text(text = "Primer item") }
@@ -42,6 +42,6 @@ fun SimpleRecyclerView() {
 @Composable
 fun GreetingPreview() {
     Components3Theme {
-        SimpleRecyclerView()
+        SimpleList()
     }
 }
